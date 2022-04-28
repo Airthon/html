@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"
+        <title>Exercícios de DARLE</title>
+    </head>
+    <body>
+        <head>
+            <h1>Exercícios HTML DARLE</h1>
+        </head>
+        <nav>
+            <a href="exercicios/teste.html">00 - Teste</a> |
+            <a href="exercicios/texto1.html">texto1</a> |
+            <a href="exercicios/texto2.html">texto2</a>
+        </nav>
+        <select id="conteudo"></select>
+        <footer>
+            Rodapé teste
+        </footer>
+        <script>
+            document.querySelectorAll('[wm-nav]').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+
+                link.onclick = function(e) {
+                    e.preventDefault()
+                    fetch(link.gerAttribute('wm-nav'))
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+        </script>
+    </body>
+</html>
