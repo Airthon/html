@@ -1,0 +1,37 @@
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg"
+    alt=" Muro"
+    width="513" height="342"
+    title="Muro da Cidade"
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+    alt="Intro Cod3r" height="342"
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+    alt="Rio de Janeiro" height="342"
+</p>
+
+<style>
+    .circular{
+        width: 513;
+        background-color: #555;
+    }
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback){
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    const p = documento.querySelector('[wm-slider] > p')
+</script>
